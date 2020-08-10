@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "57c2ceb8568db92a9fe0386f2b3894e9",
+    "content-hash": "e2cbf30f77dda2ac102da801100a7754",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -57,6 +57,56 @@
                 "stack"
             ],
             "time": "2019-12-24T22:41:47+00:00"
+        },
+        {
+            "name": "brackets/craftable-installer",
+            "version": "v1.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/BRACKETS-by-TRIAD/craftable-installer.git",
+                "reference": "8a3d6476a1a2985d1a3b0795a65f41ab6603de3e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/BRACKETS-by-TRIAD/craftable-installer/zipball/8a3d6476a1a2985d1a3b0795a65f41ab6603de3e",
+                "reference": "8a3d6476a1a2985d1a3b0795a65f41ab6603de3e",
+                "shasum": ""
+            },
+            "require": {
+                "ext-zip": "*",
+                "symfony/console": "~3.0|~4.0|~5.0",
+                "symfony/process": "~3.0|~4.0|~5.0"
+            },
+            "bin": [
+                "craftable"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Brackets\\CraftableInstaller\\Console\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pavol Perdík",
+                    "email": "pavol.perdik@brackets.sk"
+                },
+                {
+                    "name": "David Běhal",
+                    "email": "david.behal@brackets.sk"
+                }
+            ],
+            "description": "Craftable application installer.",
+            "keywords": [
+                "admin",
+                "craftable",
+                "crud"
+            ],
+            "time": "2020-05-05T08:00:02+00:00"
         },
         {
             "name": "brick/math",
@@ -6026,5 +6076,6 @@
     "platform": {
         "php": "^7.2.5"
     },
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
 }

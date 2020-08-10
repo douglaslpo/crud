@@ -5,9 +5,7 @@
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Argon Dashboard') }}</title>
-    <!-- Favicon -->
-    <link href="{{ asset('argon') }}/img/brand/favicon.png" rel="icon" type="image/png">
+    <title>{{ config('app.name', 'CRUD Laravel') }}</title>
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
     <!-- Icons -->
@@ -42,23 +40,11 @@
             </a>
             <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
                 <div class=" dropdown-header noti-title">
-                    <h6 class="text-overflow m-0">Welcome!</h6>
+                    <h6 class="text-overflow m-0">Bem Vindo!</h6>
                 </div>
                 <a href=href="{{ route('profile.edit') }}" class="dropdown-item">
                     <i class="ni ni-single-02"></i>
-                    <span>My profile</span>
-                </a>
-                <a href="#" class="dropdown-item">
-                    <i class="ni ni-settings-gear-65"></i>
-                    <span>Settings</span>
-                </a>
-                <a href="#" class="dropdown-item">
-                    <i class="ni ni-calendar-grid-58"></i>
-                    <span>Activity</span>
-                </a>
-                <a href="#" class="dropdown-item">
-                    <i class="ni ni-support-16"></i>
-                    <span>Support</span>
+                    <span>Meu Perfil</span>
                 </a>
                 <div class="dropdown-divider"></div>
                 <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault();
@@ -101,33 +87,6 @@
         <!-- Navigation -->
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('home') }}">
-                    <i class="ni ni-tv-2 text-primary"></i> Dashboard
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="#navbar-examples" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
-                    <i class="fab fa-laravel" style="color: #f4645f;"></i>
-                    <span class="nav-link-text" style="color: #f4645f;">Laravel Examples</span>
-                </a>
-
-                <div class="collapse show" id="navbar-examples">
-                    <ul class="nav nav-sm flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('profile.edit') }}">
-                                User profile
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('user.index') }}">
-                                User Management
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-
-            <li class="nav-item">
                 <a class="nav-link" href="#">
                     <i class="ni ni-planet text-blue"></i> Icons
                 </a>
@@ -145,11 +104,6 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">
                     <i class="ni ni-circle-08 text-pink"></i> Register
-                </a>
-            </li>
-            <li class="nav-item mb-5" style="position: absolute; bottom: 0;">
-                <a class="nav-link" href="https://www.creative-tim.com/product/argon-dashboard-pro-laravel" target="_blank">
-                    <i class="ni ni-cloud-download-95"></i> Upgrade to PRO
                 </a>
             </li>
         </ul>
@@ -177,7 +131,7 @@
         </ul>
     </div>
 </div>
-</nav>                
+</nav>
     <div class="main-content">
         <!-- Top navbar -->
 <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
@@ -238,7 +192,7 @@
         </li>
     </ul>
 </div>
-</nav>    
+</nav>
             <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
 <div class="container-fluid">
     <div class="alert alert-danger" role="alert">
@@ -349,7 +303,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="col-12">
                                         </div>
 
@@ -386,13 +340,13 @@
                 </div>
                 <div class="card-footer py-4">
                     <nav class="d-flex justify-content-end" aria-label="...">
-                        
+
                     </nav>
                 </div>
             </div>
         </div>
     </div>
-        
+
     <footer class="footer">
 <div class="row align-items-center justify-content-xl-between">
 <div class="col-xl-6">
@@ -423,11 +377,11 @@
 </div></footer>    </div>
     </div>
 
-    
+
     <script src="{{ asset('argon') }}/vendor/jquery/dist/jquery.min.js"></script>
         <script src="{{ asset('argon') }}/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    
-            
+
+
     <!-- Argon JS -->
     <script src="{{ asset('argon') }}/js/argon.js?v=1.0.0"></script>
 </body></html>

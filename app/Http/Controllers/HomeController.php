@@ -1,5 +1,8 @@
 <?php
 
+use App\Models\Contrato;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 namespace App\Http\Controllers;
 
 class HomeController extends Controller
@@ -23,4 +26,5 @@ class HomeController extends Controller
     {
         return view('dashboard');
     }
+
 }
