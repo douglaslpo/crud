@@ -18,6 +18,7 @@ class UsuarioController extends Controller
      */
     public function index()
     {
+        $contratos = Contrato::all();
         $usuarios = Usuario::all();
         return view('usuarios.create', compact('usuarios','usuarios'));
 
@@ -45,21 +46,16 @@ class UsuarioController extends Controller
             'nome'=>'required',
             'cpf'=> 'required'
         ]);
- 
+
         $usuario = new Usuario([
             'nome' => $request->get('nome'),
             'cpf'=> $request->get('cpf'),
-            'id_contrato'=> $request->get('id_contrato')
         ]);
- 
+
             $usuario->save();
                 return redirect('/usuarios.create')->with('success', 'Usuario adiconado');
-            
-                function showIdContrato($id_contrato)
-                {
-                    $id_contrato = Contrato::where('id', $id_contrato)->first();
-                    return view('usuarios.contratoShow', ['id_contrato' => $id_contrato]);
-                }
+
+                
     }
 
     /**
@@ -71,7 +67,7 @@ class UsuarioController extends Controller
     public function show(Usuario $usuario)
     {
             return view('usuarios.show',compact('usuario'));
-            
+
     }
 
     /**
@@ -98,9 +94,9 @@ class UsuarioController extends Controller
             'nome' => 'required',
             'cpf' => 'required',
         ]);
-  
+
         $usuario->update($request->all());
-  
+
         return redirect()->route('usuarios.index')
                         ->with('sucess','O usuario foi atualizado');
     }
@@ -114,7 +110,7 @@ class UsuarioController extends Controller
     public function destroy(Usuario $usuario)
     {
         $usuario->delete();
-  
+
         return redirect()->route('usuarios.index')
                         ->with('sucess','O usuario foi deletado com sucesso');
     }

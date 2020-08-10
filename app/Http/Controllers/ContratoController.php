@@ -26,8 +26,8 @@ class ContratoController extends Controller
 
         $contratos = Contrato::all();
 
-        return view('contratos.index', [
-            
+        return view('contratos.create', [
+
            // 'contratos' -> $contratos,
         ]
     );
@@ -42,7 +42,7 @@ class ContratoController extends Controller
      */
     public function create()
     {
-        return view('contrato.index');
+        return view('contrato.create');
     }
 
     /**
@@ -56,27 +56,31 @@ class ContratoController extends Controller
         $request->validate([
             'cnpj' => 'required',
             'razao_social' => 'required',
+            'nome_fantasia' => 'required',
             'email' => 'required',
             'logotipo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'status' => 'required'
         ]);
- 
+
         if ($files = $request->file('image')) {
            $destinationPath = 'public/image/'; // pasta de armazenamento
            $logomarca = date('YmdHis') . "." . $files->getClientOriginalExtension();
            $files->move($destinationPath, $logomarca);
            $insert['image'] = "$logomarca";
         }
-         
-        $insert['cnpj'] = $request->get('cnpj');
-        $insert['razao_social'] = $request->get('razao_social');
-        $insert['email'] = $request->get('email');
-        $insert['status'] = $request->get('status');
- 
-        Contrato::insert($request->all());
-    
-        return Redirect::to('products')
-       ->with('success','Greate! Product created successfully.');
+
+        $contrato = new Contrato([
+            'cnpj' => $request->get('cnpj'),
+            'razao_social'=> $request->get('razao_social'),
+            'nome_fantasia' => $request->get('nome_fantasia'),
+            'email' => $request->get('email'),
+            'logotipo' => $request->get('logotipo'),
+            'status' => $request->get('status'),
+        ]);
+
+        $contrato->save();
+                return redirect('/contratos.create')
+                ->with('success','Contrato, adicionado.');
     }
 
     /**
@@ -110,7 +114,7 @@ class ContratoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+
     }
 
     /**
